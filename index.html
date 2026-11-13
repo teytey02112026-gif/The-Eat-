@@ -72,12 +72,12 @@ const dishes=[
 {km:"ចាយ៉បំពង",en:"Fried Spring Rolls",zh:"炸春卷",p:4,c:"snack",img:'https://images.squarespace-cdn.com/content/v1/5854c249bebafb497fb1865e/1645018517544-3EXOO31RM243DFRBCFJQ/k1_fried_spring_rolls_001.jpg?format=1000w'},
 {km:"ញាំត្រជៀកជ្រូក",en:"Pig Ear Salad",zh:"凉拌猪耳朵",p:4.5,c:"salad",img:"https://q9.itc.cn/images01/20241013/01cc6e6eca4a46fcba1185cc8006a86f.jpeg"},
 {km:"ញាំជើងមាន់ខ្មៅ",en:"Black Chicken Feet Salad",zh:"凉拌乌鸡爪",p:4.5,c:"salad",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Spicy%20and%20sour%20chicken%20feet.jpg?width=900"},
-{km:"ញាំកោះទា",en:"Duck Gizzard Salad",zh:"凉拌鸭胗",p:4.5,c:"salad",img:"https://boot-img.xuexi.cn/image/1006/process/b31b061a9fe540f3b0644a85135e6e14.jpg"},
+{km:"ញាំកោះទា",en:"Duck Gizzard Salad",zh:"凉拌鸭胗",p:4.5,c:"salad",img:"https://bellvkit.com/cdn/shop/articles/DuckLarb_landscape_BellVKit_1200x1200.jpg?v=1767275075"},
 {km:"ញាំកោះមាន់",en:"Chicken Gizzard Salad",zh:"凉拌鸡胗",p:4,c:"salad",img:"https://imgfp.hotp.jp/IMGH/61/97/P034716197/P034716197_480.jpg"},
 {km:"ញាំកំភួបគោ",en:"Beef Shank Salad",zh:"凉拌牛腱子",p:5,c:"salad",img:"https://p0.itc.cn/q_70/images03/20210203/368019d11f2a468f8a631d8cb958bd20.jpeg"},
 {km:"ញាំបេះដូងជ្រូក",en:"Pork Heart Salad",zh:"凉拌猪心",p:4.5,c:"salad",img:"https://img.taiking.tw/6D74ECE34BDA3CAA12F921FAEF3BA3B1395F6C85E2A0D45E87C370DBDF6BD9D4"},
 {km:"ញាំពងមាន់ខ្មៅ",en:"Century Egg Salad",zh:"凉拌皮蛋",p:4,c:"salad",img:"https://res.cloudinary.com/tf-lab/image/upload/w_500%2Ch_500%2Cc_fill%2Cg_auto%3Asubject%2Cq_auto%2Cf_auto/restaurant/cfde4a59-a6a2-4152-8a33-33d98fab8120/a3f0603e-0aaf-4cd7-89b4-b4f472f33047.jpg"},
-{km:"ជ្រក់ជើងមាន់",en:"Pickled Chicken Feet",zh:"泡椒鸡爪",p:4,c:"salad",img:"https://boot-img.xuexi.cn/image/1006/process/b31b061a9fe540f3b0644a85135e6e14.jpg?auto=compress"},
+{km:"ជ្រក់ជើងមាន់",en:"Pickled Chicken Feet",zh:"泡椒鸡爪",p:4,c:"salad",img:"https://bellvkit.com/cdn/shop/articles/DuckLarb_landscape_BellVKit_1200x1200.jpg?v=1767275075?auto=compress"},
 {km:"ញាំសាច់បង្គា",en:"Shrimp Salad",zh:"凉拌虾仁",p:7,c:"salad",img:"https://rachelcooksthai.com/wp-content/uploads/2013/02/Pla-Goong-3.jpg"},
 {km:"សាច់ផាក់ឡូវចំរុះ",en:"Mixed Chinese Braised Platter",zh:"凉拌卤水拼盘",p:8,c:"salad",img:"https://images.deliveryhero.io/image/fd-tw/LH/cw5s-listing.jpg"},
 {km:"ញាំត្រសក់",en:"Cucumber Salad",zh:"凉拌黄瓜",p:3,c:"salad",img:"https://cdn-th.orstatic.com/userphoto/doorphoto/8/6DR/019DXE9B91DA6EC4AA9C26px.jpg?og=1"},
@@ -246,7 +246,7 @@ function dishPhoto(d,i){
 
  if(d.km==='ញាំសាច់បង្គា') return 'https://rachelcooksthai.com/wp-content/uploads/2013/02/Pla-Goong-3.jpg';
 
- if(d.km==='ជ្រក់ជើងមាន់') return 'https://boot-img.xuexi.cn/image/1006/process/b31b061a9fe540f3b0644a85135e6e14.jpg?auto=compress';
+ if(d.km==='ជ្រក់ជើងមាន់') return 'https://bellvkit.com/cdn/shop/articles/DuckLarb_landscape_BellVKit_1200x1200.jpg?v=1767275075?auto=compress';
 
  if(d.km==='ញាំពងមាន់ខ្មៅ') return 'https://res.cloudinary.com/tf-lab/image/upload/w_500%2Ch_500%2Cc_fill%2Cg_auto%3Asubject%2Cq_auto%2Cf_auto/restaurant/cfde4a59-a6a2-4152-8a33-33d98fab8120/a3f0603e-0aaf-4cd7-89b4-b4f472f33047.jpg';
 
@@ -286,7 +286,7 @@ function dishPhoto(d,i){
  if(d.km==='ចាយ៉បំពង') return 'https://images.squarespace-cdn.com/content/v1/5854c249bebafb497fb1865e/1645018517544-3EXOO31RM243DFRBCFJQ/k1_fried_spring_rolls_001.jpg?format=1000w';
  if(d.km==='ញាំត្រជៀកជ្រូក') return 'https://q9.itc.cn/images01/20241013/01cc6e6eca4a46fcba1185cc8006a86f.jpeg';
  if(d.km==='ញាំជើងមាន់ខ្មៅ') return 'https://commons.wikimedia.org/wiki/Special:FilePath/Spicy%20and%20sour%20chicken%20feet.jpg?width=900';
- if(d.km==='ញាំកោះទា') return 'https://boot-img.xuexi.cn/image/1006/process/b31b061a9fe540f3b0644a85135e6e14.jpg';
+ if(d.km==='ញាំកោះទា') return 'https://bellvkit.com/cdn/shop/articles/DuckLarb_landscape_BellVKit_1200x1200.jpg?v=1767275075';
  if(d.km==='ញាំកោះមាន់') return 'https://imgfp.hotp.jp/IMGH/61/97/P034716197/P034716197_480.jpg';
  if(d.km==='ញាំកំភួបគោ') return 'https://p0.itc.cn/q_70/images03/20210203/368019d11f2a468f8a631d8cb958bd20.jpeg';
  const key=(d.km+' '+d.en).toLowerCase();
