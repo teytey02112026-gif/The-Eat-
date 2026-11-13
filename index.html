@@ -211,22 +211,21 @@ const foodPhotos={
  drinks:['photo-1513558161293-cdaf765edfd4','photo-1544145945-f90425340c7e']
 };
 function dishPhoto(d,i){
- const name=(d.en||d.km||'Cambodian food').replace(/[()]/g,' ').replace(/\\s+/g,' ').trim();
  const key=(d.km+' '+d.en).toLowerCase();
- let tags='food';
- if(/soup|hot pot|congee|ស៊ុប|បបរ/.test(key)) tags='soup';
- else if(/beer|soju|ស្រាបៀរ|ស្រាស/.test(key)) tags='beer';
- else if(/milk|drink|juice|soda|ភេសជ្ជៈ|ទឹកដោះគោ/.test(key)) tags='drink';
- else if(/salad|ញាំ/.test(key)) tags='salad';
- else if(/rice|noodle|dumpling|cake|vermicelli|បាយ|មី|គាវ|នំ/.test(key)) tags='rice,noodle';
- else if(/eggplant|mushroom|cabbage|vegetable|potato|tofu|ត្រប់|ផ្សិត|ស្ពៃ|ត្រកួន|បន្លែ|តៅហ៊ូ/.test(key)) tags='vegetable';
- else if(/fish|shrimp|prawn|squid|clam|oyster|seafood|salmon|snail|ត្រី|បង្កង|បង្គា|មឹក|ងាវ|លៀស|អយស្ទ័|កំពឹស/.test(key)) tags='seafood';
- else if(/grilled|grill|skewer|អាំង/.test(key)) tags='grilled meat';
- else if(/fried|crispy|បំពង|ចៀន/.test(key)) tags='fried food';
- else tags='Cambodian food';
- let hash=0; for(let j=0;j<name.length;j++) hash=((hash<<5)-hash+name.charCodeAt(j))|0;
- const lock=Math.abs(hash);
- return 'https://loremflickr.com/900/560/'+encodeURIComponent(name+','+tags)+ '?lock='+lock;
+ let group='fried';
+ if(/soup|hot pot|congee|ស៊ុប|បបរ/.test(key)) group='soup';
+ else if(/beer|soju|ស្រាបៀរ|ស្រាស/.test(key)) group='beer';
+ else if(/milk|drink|juice|soda|ភេសជ្ជៈ|ទឹកដោះគោ/.test(key)) group='drinks';
+ else if(/salad|ញាំ/.test(key)) group='salad';
+ else if(/rice|noodle|dumpling|cake|vermicelli|បាយ|មី|គាវ|នំ/.test(key)) group='rice';
+ else if(/eggplant|mushroom|cabbage|vegetable|potato|tofu|ត្រប់|ផ្សិត|ស្ពៃ|ត្រកួន|បន្លែ|តៅហ៊ូ/.test(key)) group='vegetables';
+ else if(/fish|shrimp|prawn|squid|clam|oyster|seafood|salmon|snail|ត្រី|បង្កង|បង្គា|មឹក|ងាវ|លៀស|អយស្ទ័|កំពឹស/.test(key)) group='seafood';
+ else if(/grilled|grill|skewer|អាំង/.test(key)) group='grilled';
+ const photos=foodPhotos[group]||foodPhotos.fried;
+ let hash=0; const label=(d.km||'')+(d.en||'');
+ for(let j=0;j<label.length;j++) hash=((hash<<5)-hash+label.charCodeAt(j))|0;
+ const photo=photos[Math.abs(hash)%photos.length];
+ return 'https://images.unsplash.com/'+photo+'?auto=format&fit=crop&w=900&q=85';
 }
 let currentFilter='all';
 function render(){const l=document.getElementById('lang').value;document.documentElement.lang=l;document.querySelectorAll('[data-i]').forEach(e=>{const v=words[l][e.dataset.i];if(v)e.textContent=v});document.getElementById('search').placeholder=l==='km'?'ស្វែងរកមុខម្ហូប...':l==='zh'?'搜索菜品...':'Search dishes...';const q=document.getElementById('search').value.trim().toLowerCase();const list=dishes.filter(d=>(currentFilter==='all'||d.c===currentFilter)&&(!q||(d.km+d.en+d.zh).toLowerCase().includes(q)));document.getElementById('items').innerHTML=list.length?list.map(d=>'<article class="dish"><img loading="lazy" src="'+dishPhoto(d,list.indexOf(d))+'" alt="'+d.en+'" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'image-missing\')"><div class="dish-body"><div class="tag">THE EAT SPECIAL</div><h3>'+d[l]+'</h3><p>'+(l==='km'?'ម្ហូបពិសេសប្រចាំហាង':l==='zh'?'餐厅特色菜':'Restaurant specialty')+'</p><div class="dish-foot"><span class="price">'+(d.cur?d.p.toLocaleString('en-US')+d.cur:'$'+Number(d.p).toFixed(2).replace(/\.00$/,'').replace(/(\.\d)0$/,'$1'))+'</span><a href="https://t.me/povpov123456383" target="_blank" rel="noopener">'+(l==='km'?'កម្មង់ ↗':l==='zh'?'立即订购 ↗':'ORDER ↗')+'</a></div></div></article>').join(''):'<div class="empty">No dishes found</div>'}
