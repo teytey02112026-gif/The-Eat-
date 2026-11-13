@@ -60,7 +60,7 @@ const dishes=[
 {km:'ភេសជ្ជៈ',en:'Soft Drinks',zh:'饮料',p:3500,cur:'៛',c:'other-drinks',img:'https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=900&q=80'},
 {km:'ទឹកដោះគោ',en:'Milk',zh:'牛奶',p:6000,cur:'៛',c:'other-drinks',img:'https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=900&q=80'},
 {km:"គាវសំបកលឿងបំពង",en:"Fried Yellow Dumpling Skins",zh:"炸黄饺子皮",p:4,c:"snack",img:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80"},
-{km:"មឹកបំពងខ្ទឹមស",en:"Garlic Fried Squid",zh:"蒜香鱿鱼",p:6,c:"seafood",img:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=80"},
+{km:"មឹកបំពងខ្ទឹមស",en:"Garlic Fried Squid",zh:"蒜香鱿鱼",p:6,c:"seafood",img:"https://www.tasteatlas.com/images/dishes/ca577a12765e4864b1f815ba1f2a01fb.jpg?v=20261113"},
 {km:"បង្កងបំពងខ្ទឹមស",en:"Garlic Fried Prawns",zh:"蒜香大头虾",p:8,c:"seafood",img:"https://img.wongnai.com/p/1920x0/2017/06/04/cbbf9cbd9bba45ffa12ef5857a58c27d.jpg"},
 {km:"អណ្តាតទាបំពងខ្ទឹមស",en:"Garlic Fried Duck Tongue",zh:"蒜香鸭舌头",p:6,c:"snack",img:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80"},
 {km:"បង្គាបំពងម្សៅនំប៉័ង",en:"Breaded Fried Shrimp",zh:"面包糠炸虾",p:5,c:"seafood",img:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=80"},
@@ -215,6 +215,7 @@ const foodPhotos={
  drinks:['photo-1513558161293-cdaf765edfd4','photo-1544145945-f90425340c7e']
 };
 function dishPhoto(d,i){
+  if(d.km==='ត្រីបំពងឆាហិរ') return 'https://www.tasteatlas.com/images/dishes/ca577a12765e4864b1f815ba1f2a01fb.jpg?v=20261113';
   if(d.km==='សាច់ជ្រូកឆ្អើឆាម្ទេស') return 'https://s.alicdn.com/%40sc02/kf/Af8d54dbdec30444ab419a6756c6641848.jpg';
   if(d.km==='ក្រពះជ្រូកឆា') return 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85&v=202611131630';
   if(d.km==='កោះមាន់ឆាជូហិរ') return 'https://n.sinaimg.cn/spider20241019/211/w2048h1363/20241019/e633-c429fba8ec33bd2f1be5f3ad60d632dc.jpg?v=202611131625';
