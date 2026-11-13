@@ -103,7 +103,7 @@ const dishes=[
 {km:"ឆ្អឹងជំនីឆាហិរ",en:"Spicy Pork Ribs",zh:"香辣排骨",p:5,c:"stirfry",img:"https://flipdish-web.imgix.net/fd30237/efd2a8e2546bb598b2411b47495f8ef3.jpg?v=202611131620"},
 {km:"ឆាហិរ",en:"Spicy Clams",zh:"香辣花甲",p:4.5,c:"seafood",img:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=80"},
 {km:"ក្រពះជ្រូកឆា",en:"Stir-fried Pork Stomach",zh:"炒猪肚",p:5,c:"stirfry",img:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85&v=202611131630"},
-{km:"សាច់ជ្រូកឆ្អើឆាម្ទេស",en:"Smoked Pork with Chili",zh:"腊肉炒辣椒",p:7,c:"stirfry",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
+{km:"សាច់ជ្រូកឆ្អើឆាម្ទេស",en:"Smoked Pork with Chili",zh:"腊肉炒辣椒",p:7,c:"stirfry",img:"https://image.maigoo.com/upload/images/20230228/17335385696_800x558.jpg_1024_1024.jpg"},
 {km:"ត្រីបំពងឆាហិរ",en:"Spicy Fried Fish",zh:"红烧鱼块",p:7,c:"seafood",img:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=80"},
 {km:"តៅហ៊ូឆាសាច់បីជាន់",en:"Tofu with Pork Belly",zh:"五花肉焖豆腐",p:5,c:"stirfry",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
 {km:"ឆ្អឹងជំនីឆាជូអែម",en:"Sweet and Sour Pork Ribs",zh:"糖醋排骨",p:5,c:"stirfry",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
@@ -215,6 +215,7 @@ const foodPhotos={
  drinks:['photo-1513558161293-cdaf765edfd4','photo-1544145945-f90425340c7e']
 };
 function dishPhoto(d,i){
+  if(d.km==='សាច់ជ្រូកឆ្អើឆាម្ទេស') return 'https://image.maigoo.com/upload/images/20230228/17335385696_800x558.jpg_1024_1024.jpg';
   if(d.km==='ក្រពះជ្រូកឆា') return 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85&v=202611131630';
   if(d.km==='កោះមាន់ឆាជូហិរ') return 'https://n.sinaimg.cn/spider20241019/211/w2048h1363/20241019/e633-c429fba8ec33bd2f1be5f3ad60d632dc.jpg?v=202611131625';
   if(d.km==='ឆ្អឹងជំនីឆាហិរ') return 'https://flipdish-web.imgix.net/fd30237/efd2a8e2546bb598b2411b47495f8ef3.jpg?v=202611131620';
