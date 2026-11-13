@@ -109,7 +109,7 @@ const dishes=[
 {km:"ឆ្អឹងជំនីឆាជូអែម",en:"Sweet and Sour Pork Ribs",zh:"糖醋排骨",p:5,c:"stirfry",img:"https://whattocooktoday.com/wp-content/uploads/2023/05/sweet-sour-pork-ribs-4-1.jpg?v=20261113"},
 {km:"សាច់គោឆាផ្កាខាត់ណា",en:"Beef with Cauliflower",zh:"花菜炒牛肉",p:5,c:"stirfry",img:"https://enmicocina.com/api/media/file/ternera-salteada-con-coliflor-y-comino.jpg?v=20261113"},
 {km:"សាច់បីជាន់ឆាស្ពៃក្ដោប",en:"Pork Belly with Cabbage",zh:"包菜炒五花肉",p:4.5,c:"stirfry",img:"https://stat.ameba.jp/user_images/20230124/07/mizuki31cafe/80/01/j/o1080134515233807142.jpg?v=20261113"},
-{km:"ទាឆាអប់ស្រាបៀ",en:"Beer-braised Duck",zh:"啤酒鸭",p:6,c:"stirfry",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
+{km:"ទាឆាអប់ស្រាបៀ",en:"Beer-braised Duck",zh:"啤酒鸭",p:6,c:"stirfry",img:"https://qnam.smzdm.com/202310/06/651f655fbd6562017.jpg_e1080.jpg?v=20261113"},
 {km:"ជើងជ្រូកខ",en:"Braised Pork Trotter",zh:"红烧猪脚",p:5,c:"stirfry",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
 {km:"ត្រីក្រហមខទឹកស៊ីអ៊ីវ",en:"Red Fish with Soy Sauce",zh:"红鱼蒸鱼豉油",p:8,c:"seafood",img:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=80"},
 {km:"ត្រីក្រហមចំហុយម្ទេសជ្រក់",en:"Red Fish with Pickled Chili",zh:"泡椒蒸红鱼",p:8,c:"seafood",img:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=80"},
@@ -215,6 +215,7 @@ const foodPhotos={
  drinks:['photo-1513558161293-cdaf765edfd4','photo-1544145945-f90425340c7e']
 };
 function dishPhoto(d,i){
+  if(d.km==='ទាឆាអប់ស្រាបៀ') return 'https://qnam.smzdm.com/202310/06/651f655fbd6562017.jpg_e1080.jpg?v=20261113';
   if(d.km==='សាច់បីជាន់ឆាស្ពៃក្ដោប') return 'https://stat.ameba.jp/user_images/20230124/07/mizuki31cafe/80/01/j/o1080134515233807142.jpg?v=20261113';
   if(d.km==='សាច់គោឆាផ្កាខាត់ណា') return 'https://enmicocina.com/api/media/file/ternera-salteada-con-coliflor-y-comino.jpg?v=20261113';
   if(d.km==='ឆ្អឹងជំនីឆាជូអែម') return 'https://whattocooktoday.com/wp-content/uploads/2023/05/sweet-sour-pork-ribs-4-1.jpg?v=20261113';
