@@ -211,6 +211,7 @@ const foodPhotos={
  drinks:['photo-1513558161293-cdaf765edfd4','photo-1544145945-f90425340c7e']
 };
 function dishPhoto(d,i){
+ if(d.km==='ស៊ុបត្រីហិរ' && d.img) return d.img;
  const key=(d.km+' '+d.en).toLowerCase();
  let group='fried';
  if(/soup|hot pot|congee|ស៊ុប|បបរ/.test(key)) group='soup';
