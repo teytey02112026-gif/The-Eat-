@@ -49,13 +49,13 @@ const dishes=[
 {km:'ស្រាបៀរវឌ្ឍនៈ(ស)',en:'Vattanac Beer (White)',zh:'Vattanac啤酒（白罐）',p:5500,cur:'៛',c:'cans',img:'https://assets.untappd.com/site/beer_logos_hd/beer-4666618_bae27_hd.jpeg'},
 {km:'ហនុមាន (ស)',en:'Hanuman Beer (White)',zh:'哈奴曼啤酒（白罐）',p:4000,cur:'៛',c:'cans',img:'https://images.untp.beer/crop?height=640&stripmeta=true&url=https%3A%2F%2Funtappd.s3.amazonaws.com%2Fphotos%2F2026_01_16%2Fd192f2f961a2b1a64d448249f19e5e39_c_1543643427_raw.jpg&width=640'},
 {km:'ហនុមាន(ខ្មៅ)',en:'Hanuman Beer (Black)',zh:'哈奴曼啤酒（黑罐）',p:5000,cur:'៛',c:'cans',img:'https://assets.untappd.com/site/beer_logos/beer-4738813_6adb7_sm.jpeg'},
-{km:'ABC',en:'ABC Stout Beer',zh:'ABC黑啤酒',p:7000,cur:'៛',c:'cans',img:'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=900&q=80'},
+{km:'ABC',en:'ABC Stout Beer',zh:'ABC黑啤酒',p:7000,cur:'៛',c:'cans',img:'https://assets.untappd.com/site/beer_logos/beer-8438_bc471_sm.jpeg'},
 {km:'ហ្គេនស្បែក(ស)',en:'Ganzberg Beer (White)',zh:'Ganzberg啤酒（白罐）',p:4000,cur:'៛',c:'cans',img:'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=900&q=80'},
 {km:'ស្រាបៀរកម្ពុជា(ស)',en:'Cambodia Beer (White)',zh:'柬埔寨啤酒（白）',p:5000,cur:'៛',c:'other-drinks',img:'https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=900&q=80'},
 {km:'ស្រាបៀរកម្ពុជា(ក្រហម)',en:'Cambodia Beer (Red)',zh:'柬埔寨啤酒（红）',p:4500,cur:'៛',c:'other-drinks',img:'https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=900&q=80'},
 {km:'ស្រាបៀរវឌ្ឍនៈ(ស)',en:'Vattanac Beer (White)',zh:'Vattanac啤酒（白）',p:6000,cur:'៛',c:'other-drinks',img:'https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=900&q=80'},
 {km:'ហនុមាន(ខ្មៅ)',en:'Hanuman Beer (Black)',zh:'哈奴曼啤酒（黑）',p:5500,cur:'៛',c:'other-drinks',img:'https://assets.untappd.com/site/beer_logos/beer-4738813_6adb7_sm.jpeg'},
-{km:'ABC',en:'ABC Stout Beer',zh:'ABC黑啤酒',p:8000,cur:'៛',c:'other-drinks',img:'https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=900&q=80'},
+{km:'ABC',en:'ABC Stout Beer',zh:'ABC黑啤酒',p:8000,cur:'៛',c:'other-drinks',img:'https://assets.untappd.com/site/beer_logos/beer-8438_bc471_sm.jpeg'},
 {km:'ស្រាសកូរ៉េ',en:'Korean Soju',zh:'韩国烧酒',p:10000,cur:'៛',c:'other-drinks',img:'https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=900&q=80'},
 {km:'ភេសជ្ជៈ',en:'Soft Drinks',zh:'饮料',p:3500,cur:'៛',c:'other-drinks',img:'https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=900&q=80'},
 {km:'ទឹកដោះគោ',en:'Milk',zh:'牛奶',p:6000,cur:'៛',c:'other-drinks',img:'https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=900&q=80'},
@@ -268,7 +268,7 @@ function dishPhoto(d,i){
  if(d.km==='ស្រាបៀរវឌ្ឍនៈ(ស)') return 'https://assets.untappd.com/site/beer_logos_hd/beer-4666618_bae27_hd.jpeg';
  if(d.km==='ហនុមាន (ស)') return 'https://images.untp.beer/crop?height=640&stripmeta=true&url=https%3A%2F%2Funtappd.s3.amazonaws.com%2Fphotos%2F2026_01_16%2Fd192f2f961a2b1a64d448249f19e5e39_c_1543643427_raw.jpg&width=640';
  if(d.km==='ហនុមាន(ខ្មៅ)') return 'https://assets.untappd.com/site/beer_logos/beer-4738813_6adb7_sm.jpeg';
- if(d.km==='ABC') return 'https://www.heineken.com/media-us/abc-extra-stout-can.png';
+ if(d.km==='ABC') return 'https://assets.untappd.com/site/beer_logos/beer-8438_bc471_sm.jpeg';
  if(d.km==='ហ្គេនស្បែក(ស)') return 'https://ganzberg.com/wp-content/uploads/2023/05/Ganzberg-Beer-Can.png';
  if(d.km==='ស្រាសកូរ៉េ') return 'https://acemartmall.com/cdn/shop/files/chamisul-soju-fresh-spiritueux-de-coree-du-sud-350ml-16-hite-jinro_1024x1024.jpg?v=1741618151';
  if(d.km==='ភេសជ្ជៈ') return 'https://dak-international.com/wp-content/uploads/2024/03/High-Res-030-scaled-e1711560723937-2048x1644.jpg';
