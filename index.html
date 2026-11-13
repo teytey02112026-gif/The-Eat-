@@ -95,7 +95,7 @@ const dishes=[
 {km:"បង្កងឆាខ្ទឹមស",en:"Garlic Stir-fried Prawns",zh:"蒜蓉炒大头虾",p:8,c:"seafood",img:"https://cdn.squaremeal.sg/restaurants/791/images/596488-sld_27022022045848.jpg?auto=format%2Ccompress&fit=crop&h=520&w=918"},
 {km:"បង្កងឆាការី",en:"Prawns with Curry Sauce",zh:"大头虾炒咖喱酱",p:8,c:"seafood",img:"https://cupofyum.com/uploads/images/000/096/499/96499-koong-karee-recipe-shrimp-yellow-curry-stir-fry-1f21e04b6f4aa11f93cd05031546ccf6.webp"},
 {km:"បង្គាឆាសណ្តែកជប៉ុន",en:"Shrimp with Edamame",zh:"毛豆炒虾",p:6,c:"seafood",img:"https://www.greatagri.com/_upload/images/1712131034450.jpg"},
-{km:"បង្គាឆាជូអែម",en:"Sweet and Sour Shrimp",zh:"糖醋虾",p:6,c:"seafood",img:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=80"},
+{km:"បង្គាឆាជូអែម",en:"Sweet and Sour Shrimp",zh:"糖醋虾",p:6,c:"seafood",img:"https://d1w7312wesee68.cloudfront.net/CNYGAAQwMfhU_Jh6LTEwqFhQMnP9oMsoTHp5czjxu04/resize%3Afit%3A720%3A720/plain/s3%3A/toasttab/menu_service/restaurants/25eb2571-7a87-4b79-9117-f5b3dcc44c49/MenuItem/18860ce2-9d9b-4d59-b3ba-f656f3a3c88a.png"},
 {km:"សាច់បីជាន់ឆាម្ទេស",en:"Spicy Pork Belly",zh:"小炒肉",p:4.5,c:"stirfry",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
 {km:"សាច់គោឆាជូហិរ",en:"Hot and Sour Beef",zh:"小炒黄牛肉",p:5,c:"stirfry",img:"https://redhousespice.com/wp-content/uploads/2023/04/Hunan-Beef-5.jpg"},
 {km:"សាច់គោឆាម្ទេសប្លោក",en:"Beef with Green Pepper",zh:"青椒炒牛肉",p:5,c:"stirfry",img:"https://cdn.justonecookbook.com/spai/q_glossy%2Bret_img%2Bto_auto/www.justonecookbook.com/wp-content/uploads/2020/11/Beef-and-Green-Pepper-Stir-Fry-0871-II.jpg"},
@@ -215,6 +215,8 @@ const foodPhotos={
  drinks:['photo-1513558161293-cdaf765edfd4','photo-1544145945-f90425340c7e']
 };
 function dishPhoto(d,i){
+  if(d.km==='បង្គាឆាជូអែម') return 'https://d1w7312wesee68.cloudfront.net/CNYGAAQwMfhU_Jh6LTEwqFhQMnP9oMsoTHp5czjxu04/resize%3Afit%3A720%3A720/plain/s3%3A/toasttab/menu_service/restaurants/25eb2571-7a87-4b79-9117-f5b3dcc44c49/MenuItem/18860ce2-9d9b-4d59-b3ba-f656f3a3c88a.png';
+
   if(d.km==='បង្គាឆាសណ្តែកជប៉ុន') return 'https://www.greatagri.com/_upload/images/1712131034450.jpg';
 
   if(d.km==='បង្គាឆាសណ្តែកជប៉ុន') return 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=80';
