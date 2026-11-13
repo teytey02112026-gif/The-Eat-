@@ -130,7 +130,7 @@ const dishes=[
 {km:"ស៊ុបមាន់ខ្មៅ",en:"Black Chicken Soup",zh:"乌鸡汤",p:8,c:"soup",img:"https://www.chinasichuanfood.com/wp-content/uploads/2021/01/black-chicken-soup-2.jpg?v=20261113"},
 {km:"ស៊ុបចង្កាក់ស៊ីឈីន",en:"Sichuan Hot Pot Skewers",zh:"四川火锅串串",p:12,c:"soup",img:"https://booking.pystravel.vn/uploads/posts/albums/18484/58fc7b72ac269705c5af9a2d33a07930.jpg?v=20261113"},
 {km:"បង្កងនាគឆាហិរ",en:"Spicy Dragon Lobster",zh:"麻辣龙虾",p:13,c:"seafood",img:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=80"},
-{km:"បបរពងមាន់ខ្មៅសាច់ចិញ្ច្រាំ",en:"Century Egg and Pork Congee",zh:"皮蛋瘦肉粥",p:5,c:"rice",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
+{km:"បបរពងមាន់ខ្មៅសាច់ចិញ្ច្រាំ",en:"Century Egg and Pork Congee",zh:"皮蛋瘦肉粥",p:5,c:"rice",img:"https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/recipe_pics_v2/medium/rice_porridge_congee_with_century_egg_and_pork_or_chicken.jpg?v=20261113"},
 {km:"បបរគ្រឿងសមុទ្រ",en:"Seafood Congee",zh:"海鲜粥",p:9,c:"rice",img:"https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/seafood_congee.jpg?v=20261113"},
 {km:"បាយឆាយ៉ាងចូវ",en:"Yangzhou Fried Rice",zh:"扬州炒饭",p:4,c:"rice",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
 {km:"បាយឆាគ្រឿងសមុទ្រ",en:"Seafood Fried Rice",zh:"海鲜炒饭",p:5,c:"rice",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
@@ -216,6 +216,7 @@ const foodPhotos={
 };
 function dishImageError(img){const fallbacks=(img.dataset.fallbacks||'').split('|').filter(Boolean);const next=fallbacks.shift();img.dataset.fallbacks=fallbacks.join('|');if(next){img.src=next;}else{img.hidden=true;}}
 function dishPhoto(d,i){
+  if(d.km==='បបរពងមាន់ខ្មៅសាច់ចិញ្ច្រាំ') return 'https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/recipe_pics_v2/medium/rice_porridge_congee_with_century_egg_and_pork_or_chicken.jpg?v=20261113';
   if(d.km==='ស៊ុបមាន់ចិនសែ') return 'https://www.chinasichuanfood.com/wp-content/uploads/2020/01/chinese-chicken-soup-1.jpg?v=20261113';
   if(d.km==='ស៊ុបមាន់ខ្មៅ') return 'https://www.chinasichuanfood.com/wp-content/uploads/2021/01/black-chicken-soup-2.jpg?v=20261113';
   if(d.km==='ស៊ុបចង្កាក់ស៊ីឈីន') return 'https://booking.pystravel.vn/uploads/posts/albums/18484/58fc7b72ac269705c5af9a2d33a07930.jpg?v=20261113';
