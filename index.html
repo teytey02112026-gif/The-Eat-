@@ -211,6 +211,8 @@ const foodPhotos={
  drinks:['photo-1513558161293-cdaf765edfd4','photo-1544145945-f90425340c7e']
 };
 function dishPhoto(d,i){
+ if(d.km==='ញាំពងមាន់ខ្មៅ') return 'https://i0.wp.com/sichuankitchenrecipes.com/wp-content/uploads/2021/12/KZ9A9978.jpg?fit=6542%2C4202&ssl=1';
+
  if(d.km==='ស៊ុបត្រីហិរ' && d.img) return d.img;
  if(d.km==='ស៊ុបកង្កែបឆ្នាំងធំ') return 'https://www.ramenheaven.de/cdn/shop/articles/lau-ech-frosch-hotpot-476420.png?crop=center&height=1200&v=1745807720&width=1200';
  if(d.km==='បង្កងនាគឆា') return 'https://product.hstatic.net/200000626331/product/tom_cang_xanh_chay_toi_3591109e0512472bb42956e5f3da3c2f.png';
