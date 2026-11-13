@@ -131,7 +131,7 @@ const dishes=[
 {km:"ស៊ុបចង្កាក់ស៊ីឈីន",en:"Sichuan Hot Pot Skewers",zh:"四川火锅串串",p:12,c:"soup",img:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"},
 {km:"បង្កងនាគឆាហិរ",en:"Spicy Dragon Lobster",zh:"麻辣龙虾",p:13,c:"seafood",img:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=80"},
 {km:"បបរពងមាន់ខ្មៅសាច់ចិញ្ច្រាំ",en:"Century Egg and Pork Congee",zh:"皮蛋瘦肉粥",p:5,c:"rice",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
-{km:"បបរគ្រឿងសមុទ្រ",en:"Seafood Congee",zh:"海鲜粥",p:9,c:"rice",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
+{km:"បបរគ្រឿងសមុទ្រ",en:"Seafood Congee",zh:"海鲜粥",p:9,c:"rice",img:"https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/seafood_congee.jpg?v=20261113"},
 {km:"បាយឆាយ៉ាងចូវ",en:"Yangzhou Fried Rice",zh:"扬州炒饭",p:4,c:"rice",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
 {km:"បាយឆាគ្រឿងសមុទ្រ",en:"Seafood Fried Rice",zh:"海鲜炒饭",p:5,c:"rice",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
 {km:"មីឆាសាច់គោ",en:"Beef Fried Noodles",zh:"牛肉炒面",p:4,c:"rice",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
@@ -216,6 +216,7 @@ const foodPhotos={
 };
 function dishImageError(img){const fallbacks=(img.dataset.fallbacks||'').split('|').filter(Boolean);const next=fallbacks.shift();img.dataset.fallbacks=fallbacks.join('|');if(next){img.src=next;}else{img.hidden=true;}}
 function dishPhoto(d,i){
+  if(d.km==='បបរគ្រឿងសមុទ្រ') return 'https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/seafood_congee.jpg?v=20261113';
   if(d.km==='ស៊ុបប្រហិតមាឡាចាំង') return 'https://d3nrav7vo3lya8.cloudfront.net/profile_photos/hot-pot/176p.webp?v=20261113';
   if(d.km==='ស៊ុបពោះគោហិរ') return 'https://n.sinaimg.cn/sinakd20201223ac/518/w1250h868/20201223/dc75-kftfpiv4479960.jpg?v=20261113';
   if(d.km==='ស៊ុបសាច់គោហិរ') return 'https://commons.wikimedia.org/wiki/Special:FilePath/Shuizhuniurou.jpg?width=1200&v=20261113';
