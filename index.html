@@ -117,7 +117,7 @@ const dishes=[
 {km:"មាន់ត្រជាក់ (កន្លះ)",en:"Cold Poached Chicken (Half)",zh:"白切鸡（半只）",p:7,c:"khmer",img:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80"},
 {km:"ពងមាន់ឆាម្ទេស",en:"Eggs with Chili",zh:"辣椒炒鸡蛋",p:4,c:"stirfry",img:"https://img.wongnai.com/p/1968x0/2019/03/23/ea43621eb7d6435f9d0c18f9190fa790.jpg?v=20261113"},
 {km:"ពងមាន់ឆាប៉េងប៉ោះ",en:"Eggs with Tomato",zh:"西红柿炒鸡蛋",p:4,c:"stirfry",img:"https://cdn3.didevelop.com/public/cdn/533_54472fc6d9aa3970c94eab97ea7329d2.jpg?v=20261113"},
-{km:"ពងមាន់ឆាស្ពៃកញ្ចប់",en:"Eggs with Preserved Mustard",zh:"榨菜炒鸡蛋",p:4,c:"stirfry",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
+{km:"ពងមាន់ឆាស្ពៃកញ្ចប់",en:"Eggs with Preserved Mustard",zh:"榨菜炒鸡蛋",p:4,c:"stirfry",img:"https://x0.ifengimg.com/res/2019/9C5BE6E6155A8312499B78D28472D7E3D4758FAE_size113_w1280_h856.jpeg?v=20261113"},
 {km:"ស្ពៃតឿឆា",en:"Garlic Shanghai Bok Choy",zh:"蒜蓉上海青",p:3,c:"vegetables",img:"https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=80"},
 {km:"ត្រកួនឆា",en:"Garlic Water Spinach",zh:"蒜蓉空心菜",p:3,c:"vegetables",img:"https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=80"},
 {km:"ស្ពៃបូកគោឆា",en:"Garlic Napa Cabbage",zh:"蒜蓉大白菜",p:3,c:"vegetables",img:"https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=80"},
@@ -215,6 +215,7 @@ const foodPhotos={
  drinks:['photo-1513558161293-cdaf765edfd4','photo-1544145945-f90425340c7e']
 };
 function dishPhoto(d,i){
+  if(d.km==='ពងមាន់ឆាស្ពៃកញ្ចប់') return 'https://x0.ifengimg.com/res/2019/9C5BE6E6155A8312499B78D28472D7E3D4758FAE_size113_w1280_h856.jpeg?v=20261113';
   if(d.km==='ពងមាន់ឆាប៉េងប៉ោះ') return 'https://cdn3.didevelop.com/public/cdn/533_54472fc6d9aa3970c94eab97ea7329d2.jpg?v=20261113';
   if(d.km==='ពងមាន់ឆាម្ទេស') return 'https://img.wongnai.com/p/1968x0/2019/03/23/ea43621eb7d6435f9d0c18f9190fa790.jpg?v=20261113';
   if(d.km==='មាន់ត្រជាក់ (ទាំងមូល)') return 'https://s.hdnux.com/photos/01/50/02/36/27273090/3/rawImage.jpg?v=20261113';
