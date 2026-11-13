@@ -124,7 +124,7 @@ const dishes=[
 {km:"ដំឡូងឆាជូហិរ",en:"Hot and Sour Shredded Potatoes",zh:"酸辣土豆丝",p:4,c:"vegetables",img:"https://omnivorescookbook.com/wp-content/uploads/2023/10/230724_Shredded-Potato-Stir-Fry_550-600x600.jpg?v=20261113"},
 {km:"ស៊ុបសាច់គោហិរ",en:"Spicy Beef Soup",zh:"水煮牛肉",p:12,c:"soup",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Shuizhuniurou.jpg?width=1200&v=20261113"},
 {km:"ស៊ុបពោះគោហិរ",en:"Spicy Beef Tripe Soup",zh:"毛血旺",p:12,c:"soup",img:"https://img06.weeecdn.com/item/image/254/144/72776A48A537CED5.png?v=20261113"},
-{km:"ស៊ុបប្រហិតមាឡាចាំង",en:"Mala Hot Pot Balls Soup",zh:"麻辣火锅丸子",p:8,c:"soup",img:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"},
+{km:"ស៊ុបប្រហិតមាឡាចាំង",en:"Mala Meatball Soup",zh:"麻辣丸子汤",p:8,c:"soup",img:"https://d3nrav7vo3lya8.cloudfront.net/profile_photos/hot-pot/176p.webp?v=20261113"},
 {km:"ស៊ុបក្រពះជ្រូកម្រេចខ្ចី",en:"Pork Stomach Soup with Fresh Pepper",zh:"猪肚鲜花椒汤",p:6,c:"soup",img:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"},
 {km:"ស៊ុបមាន់ចិនសែ",en:"Free-range Chicken Soup",zh:"土鸡汤",p:8,c:"soup",img:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"},
 {km:"ស៊ុបមាន់ខ្មៅ",en:"Black Chicken Soup",zh:"乌鸡汤",p:8,c:"soup",img:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"},
@@ -216,6 +216,7 @@ const foodPhotos={
 };
 function dishImageError(img){const fallbacks=(img.dataset.fallbacks||'').split('|').filter(Boolean);const next=fallbacks.shift();img.dataset.fallbacks=fallbacks.join('|');if(next){img.src=next;}else{img.hidden=true;}}
 function dishPhoto(d,i){
+  if(d.km==='ស៊ុបប្រហិតមាឡាចាំង') return 'https://d3nrav7vo3lya8.cloudfront.net/profile_photos/hot-pot/176p.webp?v=20261113';
   if(d.km==='ស៊ុបពោះគោហិរ') return 'https://n.sinaimg.cn/sinakd20201223ac/518/w1250h868/20201223/dc75-kftfpiv4479960.jpg?v=20261113';
   if(d.km==='ស៊ុបសាច់គោហិរ') return 'https://commons.wikimedia.org/wiki/Special:FilePath/Shuizhuniurou.jpg?width=1200&v=20261113';
   if(d.km==='ដំឡូងឆាជូហិរ') return 'https://omnivorescookbook.com/wp-content/uploads/2023/10/230724_Shredded-Potato-Stir-Fry_550-600x600.jpg?v=20261113';
