@@ -192,7 +192,9 @@ const dishes=[
 {km:"ត្រកួន (បន្ថែម)",en:"Water Spinach (Extra)",zh:"空心菜（加菜）",p:2,c:"vegetables",img:"https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=80"},
 {km:"ពពុះសណ្តែក (បន្ថែម)",en:"Bean Curd Skin (Extra)",zh:"腐竹（加菜）",p:2,c:"vegetables",img:"https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=80"},
 {km:"មីសួរចិន (បន្ថែម)",en:"Chinese Vermicelli (Extra)",zh:"粉丝（加菜）",p:2,c:"rice",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
-{km:"ដំឡូងបារាំង (បន្ថែម)",en:"Potatoes (Extra)",zh:"土豆（加菜）",p:2,c:"vegetables",img:"https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=80"}
+{km:"ដំឡូងបារាំង (បន្ថែម)",en:"Potatoes (Extra)",zh:"土豆（加菜）",p:2,c:"vegetables",img:"https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=80"},
+{km:'ជើងមាន់បំពង',en:'Fried Chicken Feet',zh:'炸鸡爪',p:3,c:'snack',img:'https://commons.wikimedia.org/wiki/Special:FilePath/Deep_fried_chicken_feet.jpg?width=900'},
+{km:'ហូគងបំពង',en:'Fried Tiger-Skin Rolls',zh:'虎皮卷煎',p:4,c:'snack',img:'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=80'}
 ];
 const words={
 km:{menu:'ម៉ឺនុយ',snooker:'ស្នូកឃ័រ',contact:'ទំនាក់ទំនង',welcome:'សូមស្វាគមន៍មកកាន់ THE EAT FOOD & BEER។ ម្ហូបឆ្ងាញ់ បរិយាកាសរីករាយ និងសេវាកម្មរួសរាយរាក់ទាក់។',view:'មើលម៉ឺនុយ',order:'✈️ កម្មង់តាម Telegram',title:'មុខម្ហូបពិសេស',subtitle:'ជ្រើសរើសម្ហូបដែលអ្នកចូលចិត្ត',all:'ទាំងអស់',soups:'ស៊ុប',seafood:'គ្រឿងសមុទ្រ',grill:'អាំង',snacks:'អាហារសម្រន់',cans:'កំប៉ុង',otherdrinks:'ផ្សេងៗ',salads:'ញាំ',stirfries:'ម្ហូបឆា',rice:'បាយ និង មី',khmer:'ម្ហូបខ្មែរ',vegetables:'បន្លែ',snookertitle:'ស្នូកឃ័រឥតគិតថ្លៃ',free:'ឥតគិតថ្លៃសម្រាប់អតិថិជន',snookerhead:'ស្នូកឃ័រឥតគិតថ្លៃសម្រាប់អតិថិជន',snookerbody:'អតិថិជនអាចរីករាយលេងស្នូកឃ័រដោយឥតគិតថ្លៃ។',contacttitle:'ទីតាំង និងទំនាក់ទំនង',contactdesc:'សូមមកលេង ឬទាក់ទងមកយើង',location:'ទីតាំងភោជនីយដ្ឋាន',map:'បើក Google Maps',message:'ផ្ញើសារ / កម្មង់ម្ហូប'},
@@ -211,6 +213,8 @@ const foodPhotos={
  drinks:['photo-1513558161293-cdaf765edfd4','photo-1544145945-f90425340c7e']
 };
 function dishPhoto(d,i){
+ if(d.km==='ជើងមាន់បំពង') return 'https://commons.wikimedia.org/wiki/Special:FilePath/Deep_fried_chicken_feet.jpg?width=900';
+
  if(d.km==='ក្តាមឆាការី') return 'https://www.thespruceeats.com/thmb/Y3d5pYjKf4Q6sK5o5Q5w5k9h7yE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Singapore-Chili-Crab-Recipe-5210936-hero-01-8c0c6b7f8d3a4f6d8c0b8a1e5f6d9c2b.jpg';
 
  if(d.km==='ក្តាមឆាខ្ទឹមស') return 'https://commons.wikimedia.org/wiki/Special:FilePath/Butter_garlic_crab_-_2.jpg?width=1000';
