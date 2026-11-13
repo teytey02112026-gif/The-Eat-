@@ -199,7 +199,32 @@ km:{menu:'ម៉ឺនុយ',snooker:'ស្នូកឃ័រ',contact:'ទំ
 en:{menu:'Menu',snooker:'Snooker',contact:'Contact',welcome:'Welcome to THE EAT FOOD & BEER. Delicious food, a lively atmosphere and friendly service.',view:'Explore menu',order:'✈️ Order on Telegram',title:'Our Special Dishes',subtitle:'Find something delicious to enjoy',all:'All dishes',soups:'Soups',seafood:'Seafood',grill:'Grilled',snacks:'Snacks',cans:'Canned Beer',otherdrinks:'Other Drinks',salads:'Salads',stirfries:'Stir-fried',rice:'Rice & Noodles',khmer:'Khmer Dishes',vegetables:'Vegetables',snookertitle:'Free Snooker',free:'FREE FOR CUSTOMERS',snookerhead:'Free snooker for customers',snookerbody:'Customers can enjoy a complimentary game of snooker.',contacttitle:'Location & Contact',contactdesc:'Visit us or get in touch',location:'Restaurant Location',map:'Open Google Maps',message:'Message / Order'},
 zh:{menu:'菜单',snooker:'斯诺克',contact:'联系我们',welcome:'欢迎来到 THE EAT FOOD & BEER。美味佳肴、愉快氛围和热情服务。',view:'查看菜单',order:'✈️ Telegram 订餐',title:'精选菜品',subtitle:'选择您喜爱的美味',all:'全部菜品',soups:'汤类',seafood:'海鲜',grill:'烧烤',snacks:'小吃',cans:'罐装啤酒',otherdrinks:'其他饮品',salads:'凉拌菜',stirfries:'炒菜',rice:'米饭和面食',khmer:'高棉菜',vegetables:'蔬菜',snookertitle:'免费斯诺克',free:'顾客免费',snookerhead:'顾客可免费打斯诺克',snookerbody:'到店顾客可免费享受斯诺克。',contacttitle:'地址与联系方式',contactdesc:'欢迎光临或联系我们',location:'餐厅位置',map:'打开 Google 地图',message:'发送消息 / 订餐'}
 };
+const foodPhotos={
+ soup:['photo-1547592180-85f173990554','photo-1547592334-2a4f7f7c7c5d','photo-1569718212165-3a8278d5f624'],
+ seafood:['photo-1565680018434-b513d5e5fd47','photo-1519708227418-c8fd9a32b7a2','photo-1559737558-2f5a35f4523b','photo-1559847844-5315695dadae'],
+ fried:['photo-1573080496219-bb080dd4f877','photo-1529042410759-befb1204b468','photo-1562967914-608f82629710','photo-1568901346375-23c9450c58cd'],
+ grilled:['photo-1529692236671-f1f6cf9683ba','photo-1544025162-d76694265947','photo-1555939594-58d7cb561ad1','photo-1529193591184-b1d58069ecdd'],
+ salad:['photo-1512621776951-a57141f2eefd','photo-1546069901-ba9599a7e63c','photo-1512621776951-a57141f2eefd'],
+ rice:['photo-1512058564366-18510be2db19','photo-1569718212165-3a8278d5f624','photo-1569058242253-92a9c755a0ec'],
+ vegetables:['photo-1540420773420-3366772f4999','photo-1512621776951-a57141f2eefd'],
+ beer:['photo-1608270586620-248524c67de9','photo-1535958636474-b021ee887b13'],
+ drinks:['photo-1513558161293-cdaf765edfd4','photo-1544145945-f90425340c7e']
+};
+function dishPhoto(d,i){
+ const n=d.km+' '+d.en;
+ let group='fried';
+ if(/ស៊ុប|ស្ងោរ|hot pot|soup|congee|បបរ/i.test(n)) group='soup';
+ else if(/ស្រាបៀរ|beer|abc|ស្រាស|soju/i.test(n)) group='beer';
+ else if(/ទឹកដោះគោ|ភេសជ្ជៈ|milk|drink|cola|soda/i.test(n)) group='drinks';
+ else if(/ញាំ|salad|ត្រជៀកជ្រូក|ជើងមាន់ខ្មៅ/i.test(n)) group='salad';
+ else if(/បាយ|មី|គាវ|នំ|rice|noodle|dumpling|cake|vermicelli/i.test(n)) group='rice';
+ else if(/ត្រប់|ផ្សិត|ស្ពៃ|ត្រកួន|បន្លែ|សណ្តែក|ដំឡូងបារាំង|eggplant|mushroom|cabbage|vegetable|potato|tofu/i.test(n)) group='vegetables';
+ else if(/ត្រី|បង្កង|បង្គា|មឹក|ងាវ|លៀស|អយស្ទ័|កំពឹស|seafood|fish|shrimp|prawn|squid|clam|oyster|snail|salmon/i.test(n)) group='seafood';
+ else if(/អាំង|grill|skewer|ឆ្អឹងជំនី|សាច់គោ|ពពែ|មាន់|សាច់ជ្រូក|សាច់បីជាន់|beef|goat|chicken|pork|meat/i.test(n)) group='grilled';
+ const photos=foodPhotos[group]||foodPhotos.fried;
+ return 'https://images.unsplash.com/'+photos[i%photos.length]+'?auto=format&fit=crop&w=900&q=85';
+}
 let currentFilter='all';
-function render(){const l=document.getElementById('lang').value;document.documentElement.lang=l;document.querySelectorAll('[data-i]').forEach(e=>{const v=words[l][e.dataset.i];if(v)e.textContent=v});document.getElementById('search').placeholder=l==='km'?'ស្វែងរកមុខម្ហូប...':l==='zh'?'搜索菜品...':'Search dishes...';const q=document.getElementById('search').value.trim().toLowerCase();const list=dishes.filter(d=>(currentFilter==='all'||d.c===currentFilter)&&(!q||(d.km+d.en+d.zh).toLowerCase().includes(q)));document.getElementById('items').innerHTML=list.length?list.map(d=>'<article class="dish"><img loading="lazy" src="'+d.img+'" alt="'+d.en+'" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'image-missing\')"><div class="dish-body"><div class="tag">THE EAT SPECIAL</div><h3>'+d[l]+'</h3><p>'+(l==='km'?'ម្ហូបពិសេសប្រចាំហាង':l==='zh'?'餐厅特色菜':'Restaurant specialty')+'</p><div class="dish-foot"><span class="price">'+(d.cur?d.p.toLocaleString('en-US')+d.cur:'$'+Number(d.p).toFixed(2).replace(/\.00$/,'').replace(/(\.\d)0$/,'$1'))+'</span><a href="https://t.me/povpov123456383" target="_blank" rel="noopener">'+(l==='km'?'កម្មង់ ↗':l==='zh'?'立即订购 ↗':'ORDER ↗')+'</a></div></div></article>').join(''):'<div class="empty">No dishes found</div>'}
+function render(){const l=document.getElementById('lang').value;document.documentElement.lang=l;document.querySelectorAll('[data-i]').forEach(e=>{const v=words[l][e.dataset.i];if(v)e.textContent=v});document.getElementById('search').placeholder=l==='km'?'ស្វែងរកមុខម្ហូប...':l==='zh'?'搜索菜品...':'Search dishes...';const q=document.getElementById('search').value.trim().toLowerCase();const list=dishes.filter(d=>(currentFilter==='all'||d.c===currentFilter)&&(!q||(d.km+d.en+d.zh).toLowerCase().includes(q)));document.getElementById('items').innerHTML=list.length?list.map(d=>'<article class="dish"><img loading="lazy" src="'+dishPhoto(d,list.indexOf(d))+'" alt="'+d.en+'" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'image-missing\')"><div class="dish-body"><div class="tag">THE EAT SPECIAL</div><h3>'+d[l]+'</h3><p>'+(l==='km'?'ម្ហូបពិសេសប្រចាំហាង':l==='zh'?'餐厅特色菜':'Restaurant specialty')+'</p><div class="dish-foot"><span class="price">'+(d.cur?d.p.toLocaleString('en-US')+d.cur:'$'+Number(d.p).toFixed(2).replace(/\.00$/,'').replace(/(\.\d)0$/,'$1'))+'</span><a href="https://t.me/povpov123456383" target="_blank" rel="noopener">'+(l==='km'?'កម្មង់ ↗':l==='zh'?'立即订购 ↗':'ORDER ↗')+'</a></div></div></article>').join(''):'<div class="empty">No dishes found</div>'}
 document.getElementById('lang').addEventListener('change',render);document.getElementById('search').addEventListener('input',render);document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{currentFilter=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render()}));render();
 </script></body></html>
