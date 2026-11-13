@@ -79,7 +79,7 @@ const dishes=[
 {km:"ញាំពងមាន់ខ្មៅ",en:"Century Egg Salad",zh:"凉拌皮蛋",p:4,c:"salad",img:"https://www.thebeijinger.com/sites/default/files/styles/large/public/image7_7.jpeg"},
 {km:"ជ្រក់ជើងមាន់",en:"Pickled Chicken Feet",zh:"泡椒鸡爪",p:4,c:"salad",img:"https://n.sinaimg.cn/sinacn10111/582/w1280h902/20190622/c662-hyvnhqp5503875.jpg"},
 {km:"ញាំសាច់បង្គា",en:"Shrimp Salad",zh:"凉拌虾仁",p:7,c:"salad",img:"https://rachelcooksthai.com/wp-content/uploads/2013/02/Pla-Goong-3.jpg"},
-{km:"សាច់ផាក់ឡូវចំរុះ",en:"Mixed Chinese Braised Platter",zh:"凉拌卤水拼盘",p:8,c:"salad",img:"https://images.deliveryhero.io/image/fd-tw/LH/cw5s-listing.jpg"},
+{km:"សាច់ផាក់ឡូវចំរុះ",en:"Mixed Chinese Braised Platter",zh:"凉拌卤水拼盘",p:8,c:"salad",img:"https://cdn-akamai.lkk.com/-/media/hk-site---homecook/hk_recipes_600_hot-and-spicy-chicken-pot-with-abalone/sichuan-style-boiled-fish_640/_640/_600.jpg?h=465&hash=6BD5ECA3C1E1C5A35DA381AB47DC3F1A&iar=0&w=600"},
 {km:"ញាំត្រសក់",en:"Cucumber Salad",zh:"凉拌黄瓜",p:3,c:"salad",img:"https://cdn-th.orstatic.com/userphoto/doorphoto/8/6DR/019DXE9B91DA6EC4AA9C26px.jpg?og=1"},
 {km:"ញាំសណ្តែកជប៉ុន",en:"Edamame Salad",zh:"凉拌毛豆",p:3.5,c:"salad",img:"https://inline.imgix.net/item/-KsqaUb1U_CGncVPQV7m-a1d09e05-01b1-4476-bb66-e895141b2b7e_95778050-e326-11e9-8202-4db9c9c87c55.jpg"},
 {km:"សណ្តែកជប៉ុនស្ងោ",en:"Boiled Edamame",zh:"煮毛豆",p:3.5,c:"salad",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Edamame.jpg?width=1200"},
@@ -215,6 +215,7 @@ const foodPhotos={
  drinks:['photo-1513558161293-cdaf765edfd4','photo-1544145945-f90425340c7e']
 };
 function dishPhoto(d,i){
+  if(d.km==='សាច់ផាក់ឡូវចំរុះ') return 'https://cdn-akamai.lkk.com/-/media/hk-site---homecook/hk_recipes_600_hot-and-spicy-chicken-pot-with-abalone/sichuan-style-boiled-fish_640/_640/_600.jpg?h=465&hash=6BD5ECA3C1E1C5A35DA381AB47DC3F1A&iar=0&w=600';
   if(d.km==='ញាំបេះដូងជ្រូក') return 'https://stc.bindo.vn/files/cach-lam-goi-tim-cat5.jpg';
   if(d.km==='ស៊ុបត្រីស្ពៃជូ') return 'https://www.mihome.com.tw/archive/article/4/normal/6ICB6Yaw6YW46I_c6a2aLjk0OTEzMzc1Ng%3D%3D.jpg?v=20261113';
  if(d.km==='ហូគងបំពង') return 'https://media.nedigital.sg/fairprice/fpol/media/images/product/XL/90076378_XL1_20240116.jpg?q=70&w=1200';
