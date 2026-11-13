@@ -106,7 +106,7 @@ const dishes=[
 {km:"សាច់ជ្រូកឆ្អើឆាម្ទេស",en:"Smoked Pork with Chili",zh:"腊肉炒辣椒",p:7,c:"stirfry",img:"https://s.alicdn.com/%40sc02/kf/Af8d54dbdec30444ab419a6756c6641848.jpg"},
 {km:"ត្រីបំពងឆាហិរ",en:"Spicy Fried Fish",zh:"红烧鱼块",p:7,c:"seafood",img:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=80"},
 {km:"តៅហ៊ូឆាសាច់បីជាន់",en:"Tofu with Pork Belly",zh:"五花肉焖豆腐",p:5,c:"stirfry",img:"https://asset.oceans-nadia.com/upload/save_image/90/900e326b6c4f50b4717cd91963da4bc9.jpg?h=500&impolicy=cropwm&w=500&v=20261113"},
-{km:"ឆ្អឹងជំនីឆាជូអែម",en:"Sweet and Sour Pork Ribs",zh:"糖醋排骨",p:5,c:"stirfry",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
+{km:"ឆ្អឹងជំនីឆាជូអែម",en:"Sweet and Sour Pork Ribs",zh:"糖醋排骨",p:5,c:"stirfry",img:"https://whattocooktoday.com/wp-content/uploads/2023/05/sweet-sour-pork-ribs-4-1.jpg?v=20261113"},
 {km:"សាច់គោឆាផ្កាខាត់ណា",en:"Beef with Cauliflower",zh:"花菜炒牛肉",p:5,c:"stirfry",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
 {km:"សាច់បីជាន់ឆាស្ពៃក្ដោប",en:"Pork Belly with Cabbage",zh:"包菜炒五花肉",p:4.5,c:"stirfry",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
 {km:"ទាឆាអប់ស្រាបៀ",en:"Beer-braised Duck",zh:"啤酒鸭",p:6,c:"stirfry",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
@@ -215,6 +215,7 @@ const foodPhotos={
  drinks:['photo-1513558161293-cdaf765edfd4','photo-1544145945-f90425340c7e']
 };
 function dishPhoto(d,i){
+  if(d.km==='ឆ្អឹងជំនីឆាជូអែម') return 'https://whattocooktoday.com/wp-content/uploads/2023/05/sweet-sour-pork-ribs-4-1.jpg?v=20261113';
   if(d.km==='តៅហ៊ូឆាសាច់បីជាន់') return 'https://asset.oceans-nadia.com/upload/save_image/90/900e326b6c4f50b4717cd91963da4bc9.jpg?h=500&impolicy=cropwm&w=500&v=20261113';
   if(d.km==='ត្រីបំពងឆាហិរ') return 'https://www.tasteatlas.com/images/dishes/ca577a12765e4864b1f815ba1f2a01fb.jpg?v=20261113';
   if(d.km==='សាច់ជ្រូកឆ្អើឆាម្ទេស') return 'https://s.alicdn.com/%40sc02/kf/Af8d54dbdec30444ab419a6756c6641848.jpg';
