@@ -133,7 +133,7 @@ const dishes=[
 {km:"បបរពងមាន់ខ្មៅសាច់ចិញ្ច្រាំ",en:"Century Egg and Pork Congee",zh:"皮蛋瘦肉粥",p:5,c:"rice",img:"https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/recipe_pics_v2/medium/rice_porridge_congee_with_century_egg_and_pork_or_chicken.jpg?v=20261113"},
 {km:"បបរគ្រឿងសមុទ្រ",en:"Seafood Congee",zh:"海鲜粥",p:9,c:"rice",img:"https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/seafood_congee.jpg?v=20261113"},
 {km:"បាយឆាយ៉ាងចូវ",en:"Yangzhou Fried Rice",zh:"扬州炒饭",p:4,c:"rice",img:"https://commons.wikimedia.org/wiki/Special:FilePath/Yangzhou_fried_rice_and_drinks_06-09-2019.jpg?width=1200&v=20261113"},
-{km:"បាយឆាគ្រឿងសមុទ្រ",en:"Seafood Fried Rice",zh:"海鲜炒饭",p:5,c:"rice",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
+{km:"បាយឆាគ្រឿងសមុទ្រ",en:"Seafood Fried Rice",zh:"海鲜炒饭",p:5,c:"rice",img:"https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/seafood_fried_rice.jpg?v=20261115"},
 {km:"មីឆាសាច់គោ",en:"Beef Fried Noodles",zh:"牛肉炒面",p:4,c:"rice",img:"https://omnivorescookbook.com/wp-content/uploads/2022/08/220808_Beef-Chow-Mein_550.jpg?v=20261113"},
 {km:"មីឆាគ្រឿងសមុទ្រ",en:"Seafood Fried Noodles",zh:"海鲜炒面",p:5,c:"rice",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
 {km:"មីសួរឆា",en:"Stir-fried Vermicelli",zh:"炒粉丝",p:4,c:"rice",img:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"},
@@ -217,6 +217,7 @@ const foodPhotos={
 function dishFallbacks(d){const key=({snack:'fried',grill:'grilled',stirfry:'rice',khmer:'rice'})[d.c]||d.c;const ids=foodPhotos[key]||foodPhotos.rice;return ids.map(id=>'https://images.unsplash.com/'+id+'?auto=format&fit=crop&w=900&q=80');}
 function dishImageError(img){const fallbacks=(img.dataset.fallbacks||'').split('|').filter(Boolean);const next=fallbacks.shift();img.dataset.fallbacks=fallbacks.join('|');if(next){img.src=next;}else{img.removeAttribute('src');img.classList.add('image-unavailable');img.parentElement.classList.add('dish-no-image');}}
 function dishPhoto(d,i){
+  if(d.km==='បាយឆាគ្រឿងសមុទ្រ') return 'https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/seafood_fried_rice.jpg?v=20261115';
   if(d.km==='បង្កងនាគឆាហិរ') return 'https://woman-asset.tvbs.com.tw/img/program/upload/2023/03/06/20230306113841-fed675c8.jpg?v=20261115';
   if(d.km==='បាយឆាយ៉ាងចូវ') return 'https://commons.wikimedia.org/wiki/Special:FilePath/Yangzhou_fried_rice_and_drinks_06-09-2019.jpg?width=1200&v=20261113';
   if(d.km==='មីឆាសាច់គោ') return 'https://omnivorescookbook.com/wp-content/uploads/2022/08/220808_Beef-Chow-Mein_550.jpg?v=20261113';
