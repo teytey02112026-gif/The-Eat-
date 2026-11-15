@@ -217,6 +217,7 @@ const foodPhotos={
 function dishFallbacks(d){const key=({snack:'fried',grill:'grilled',stirfry:'rice',khmer:'rice'})[d.c]||d.c;const ids=foodPhotos[key]||foodPhotos.rice;return ids.map(id=>'https://images.unsplash.com/'+id+'?auto=format&fit=crop&w=900&q=80');}
 function dishImageError(img){const fallbacks=(img.dataset.fallbacks||'').split('|').filter(Boolean);const next=fallbacks.shift();img.dataset.fallbacks=fallbacks.join('|');if(next){img.src=next;}else{img.removeAttribute('src');img.classList.add('image-unavailable');img.parentElement.classList.add('dish-no-image');}}
 function dishPhoto(d,i){
+  if(d.en==='Blanched Clams') return 'https://www.arise-app.com/images/dishes/en/steamed-clams-with-lemongrass-and-chilli-1wifnl.webp?v=20261115';
   if(d.en==='Grilled Hot Dog (1 piece)') return 'https://image.kkday.com/v2/image/get/c_fill%2Cq_55%2Ct_webp%2Cw_960/s1.kkday.com/product_216005/20241002122447_5EWpU/png?v=20261115';
   if(d.en==='Grilled Fish Ball (1 piece)') return 'https://st4.depositphotos.com/2778185/23252/i/450/depositphotos_232521868-stock-photo-thailand-sausages-black-plate.jpg?v=20261115';
   if(d.en==='Grilled Beef Ball (1 piece)') return 'https://image.kkday.com/v2/image/get/s1.kkday.com/product_540413/20251105044112_78PmR/png?v=20261115';
