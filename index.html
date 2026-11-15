@@ -162,7 +162,7 @@ const dishes=[
 {km:"មឹកអាំង (1 ដុំ)",en:"Grilled Squid Skewer (1 piece)",zh:"烤鱿鱼串（1串）",p:0.75,c:"grill",img:"https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=900&q=80"},
 {km:"ប្រហិតត្រីអាំង (1 ដុំ)",en:"Grilled Fish Ball (1 piece)",zh:"烤鱼丸子串（1串）",p:0.5,c:"grill",img:"https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=900&q=80"},
 {km:"ប្រហិតសាច់គោអាំង (1 ដុំ)",en:"Grilled Beef Ball (1 piece)",zh:"烤牛肉丸子串（1串）",p:0.5,c:"grill",img:"https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=900&q=80"},
-{km:"ហតដកអាំង (1 ដុំ)",en:"Grilled Hot Dog (1 piece)",zh:"烤热狗串（1串）",p:0.75,c:"grill",img:"https://upload.wikimedia.org/wikipedia/commons/8/80/Thai_hot_dogs.JPG"},
+{km:"ហតដកអាំង (1 ដុំ)",en:"Grilled Hot Dog (1 piece)",zh:"烤热狗串（1串）",p:0.75,c:"grill",img:"https://image.kkday.com/v2/image/get/c_fill%2Cq_55%2Ct_webp%2Cw_960/s1.kkday.com/product_216005/20241002122447_5EWpU/png"},
 {km:"ត្រីដាវអាំង",en:"Grilled Pacific Saury",zh:"烤秋刀鱼串",p:2,c:"seafood",img:"https://www.nippon.com/en/ncommon/contents/japan-topics/2461785/2461785.jpg"},
 {km:"ម្សៅដំណើបអាំង",en:"Grilled Glutinous Rice Cake",zh:"烤年糕片串",p:0.75,c:"grill",img:"https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=900&q=80"},
 {km:"ត្រីសាបាក់អាំងខ្ទឹមស",en:"Garlic Grilled Pacific Saury",zh:"蒜蓉烤秋刀鱼",p:6,c:"seafood",img:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=80"},
@@ -217,7 +217,7 @@ const foodPhotos={
 function dishFallbacks(d){const key=({snack:'fried',grill:'grilled',stirfry:'rice',khmer:'rice'})[d.c]||d.c;const ids=foodPhotos[key]||foodPhotos.rice;return ids.map(id=>'https://images.unsplash.com/'+id+'?auto=format&fit=crop&w=900&q=80');}
 function dishImageError(img){const fallbacks=(img.dataset.fallbacks||'').split('|').filter(Boolean);const next=fallbacks.shift();img.dataset.fallbacks=fallbacks.join('|');if(next){img.src=next;}else{img.removeAttribute('src');img.classList.add('image-unavailable');img.parentElement.classList.add('dish-no-image');}}
 function dishPhoto(d,i){
-  if(d.en==='Grilled Hot Dog (1 piece)') return 'https://upload.wikimedia.org/wikipedia/commons/8/80/Thai_hot_dogs.JPG?v=20261115';
+  if(d.en==='Grilled Hot Dog (1 piece)') return 'https://image.kkday.com/v2/image/get/c_fill%2Cq_55%2Ct_webp%2Cw_960/s1.kkday.com/product_216005/20241002122447_5EWpU/png?v=20261115';
   if(d.en==='Grilled Pacific Saury') return 'https://upload.wikimedia.org/wikipedia/commons/2/29/Sanma_shioyaki_by_sakura_chihaya%2B_in_Hiroshima.jpg?v=20261115';
   if(d.km==='បាយឆាគ្រឿងសមុទ្រ') return 'https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/seafood_fried_rice.jpg?v=20261115';
   if(d.km==='បង្កងនាគឆាហិរ') return 'https://woman-asset.tvbs.com.tw/img/program/upload/2023/03/06/20230306113841-fed675c8.jpg?v=20261115';
